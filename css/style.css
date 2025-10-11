@@ -1,5 +1,54 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /****** General ***********/
-* {
+html {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -57,7 +106,126 @@ a {
 .neutral-star {
     color: var(--main-bg-color)
 }
+/****** Définir la taille de base de mon html ***********/
+html {
+    font-size: 16px; /* 1rem = 16px */
+}
+/****** Les textes et paragraphes ***********/
 
+h2 {
+    font-weight: 700;
+    font-size: 1.5rem; /* 24px */
+}
+
+h3 {
+    font-size: 1.25rem; /* 20px */
+}
+p {
+    font-size: 0.8rem; /* 16px */
+}
+
+/****** Header ***********/
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+header img{
+    width: 3rem;
+    padding-top: 1rem ;
+}
+nav{
+    display: flex;
+    gap: 2.5rem;
+}
+nav a{
+    padding: 1rem 0;
+    border-top: 2px solid transparent;
+}
+nav a:hover{
+    border-top: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+nav a:active{
+    border-top: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+/****** Section texte ***********/
+.section-titles{
+    margin-bottom: 1rem;
+}
+.section-titles h2,
+.section-titles p{
+    padding-bottom: 0.5rem;
+}
+/****** recherche***********/
+.recherche{
+    display: flex;
+    margin-bottom: 1rem;
+}
+#recherche-icon{
+    background-color: var(--main-bg-color);
+    padding: 0.8rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: black;
+}
+#recherche-text{
+    text-align: center;
+    font-weight: bold;
+    border: 0.1em solid var(--main-bg-color);
+    color: black;
+}
+#recherche-bouton{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 0 0.8rem 0.8rem 0;
+    padding: 0.8rem ;
+    font-weight: bold;
+    cursor: pointer;
+}
+/****** Filtres ***********/
+#filter-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+.Filtres ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.Filtres li{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1.5rem;
+    border: 0.1em solid var(--main-bg-color);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+}
+.Filtres li:hover{
+    background-color: var(--filter-bg-color);
+    cursor: pointer;
+}
+
+
+
+/****** information ***********/
+.information{
+    display: flex;
+    align-items: center;
+}
+.icon-info{
+    border: 0.1rem solid var(--main-bg-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: black;
+    background-color: turquoise;
+}
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
     display: flex;
@@ -75,7 +243,40 @@ a {
 .hebergements {
     width: 65%;
 }
+.hebergements .section-titles{
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom:2rem;
+}
+.hebergement-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
 
+.hebergement-cards .card{
+    width: 15rem;
+    
+}
+.hebergement-cards img{
+    width: 100%;
+    height: 8rem;
+    border-radius: 1rem 1rem 0 0rem;
+}
+.hebergement-cards .card-content{
+    padding: 0.5rem;
+}
+.hebergement-cards .card-text h3{
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+.hebergement-cards .card-text p{
+    margin-bottom: 0.4rem;
+}
+.Affichier-plus{
+    font-weight: bold;
+    margin-top: 2rem;
+}
 /****** Populaires ***********/
 .populaires {
     width: 32%;
@@ -111,6 +312,7 @@ a {
 .populaires-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
+    font-weight: bold;
 }
 
 .populaires-cards .card-subtitle {
@@ -121,9 +323,46 @@ a {
     margin-bottom: 5px;
 }
 
-
-
-
+/* activites */
+.activites{
+    margin-top: 1rem;
+    padding: 30px;
+}
+.activites .title{
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+.activites-cards{
+    display: flex;
+    justify-content: space-between;
+}
+.activites-cards .card{
+    width: 17rem;
+    padding: 0;
+}
+.activites-cards .card img{
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem 1rem 0 0rem;
+}
+.activites-cards h3{
+    font-weight: bold;
+    padding: 1rem;
+}
+/****** footer ***********/
+footer{
+    margin-top: 2rem;
+    padding: 30px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    gap: 12.6rem;
+}
+.element-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 4rem;
+}
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
